@@ -18,8 +18,56 @@
   --blue-85E: #2e4e85;
   --blue-1F: #00b9ff;
   --blue-2A: #00b1fa;
+  --black-17: #171717;
 }
 
-.appStackCard {
-  @apply flex h-[100px] w-[100px] items-center justify-center border-2;
+.btn {
+  font-size: 18px;
+  border: 1px solid #ffffff;
+  padding: 5px 30px;
+  border-radius: 5px;
+  background-color: var(--blue-2A);
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  color: var(--blue-2A);
+  border: 1px solid var(--blue-2A);
+}
+
+input[type="number"] {
+  border: 1px solid var(--black-17);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--black-17);
+  transition: 0.3s ease-in-out;
+}
+
+input[type="number"]::placeholder {
+  color: var(--black-17);
+}
+
+input[type="number"]:focus {
+  outline: none;
+}
+
+.transition-ease {
+  transition: 0.3s ease-in-out;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 1s ease-in-out;
 }

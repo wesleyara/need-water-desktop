@@ -1,9 +1,9 @@
 {
-  "name": "electron-vite-template",
-  "productName": "Electron Vite Template",
+  "name": "need-water",
+  "productName": "Need Water",
   "private": true,
   "version": "2.1.0",
-  "description": "Electron Vite Template app.",
+  "description": "Need Water app.",
   "license": "MIT",
   "homepage": "./",
   "author": {
@@ -23,16 +23,19 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.4",
+    "@reduxjs/toolkit": "^1.9.1",
+    "aos": "^3.0.0-beta.6",
     "axios": "^1.2.0",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "react-icons": "^4.6.0",
-    "react-router-dom": "^6.6.1",
+    "react-redux": "^8.0.5",
     "react-toastify": "^9.1.1",
     "utils-react": "^1.0.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
+    "@types/aos": "^3.0.4",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.44.0",

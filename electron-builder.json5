@@ -2,7 +2,7 @@
  * @see https://www.electron.build/configuration/configuration
  */
 {
-  appId: "electron-vite-template",
+  appId: "need-water",
   productName: "Academia Corpo em Forma",
   copyright: "Copyright © 2022 ${author}",
   asar: true,

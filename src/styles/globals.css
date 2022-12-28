@@ -49,8 +49,12 @@ input[type="number"]::placeholder {
   color: var(--black-17);
 }
 
-input[type="number"]:focus {
-  outline: none;
+select {
+  border: 1px solid var(--black-17);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--black-17);
+  transition: 0.3s ease-in-out;
 }
 
 .transition-ease {

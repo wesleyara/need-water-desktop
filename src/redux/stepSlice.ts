@@ -10,9 +10,12 @@ export const slice = createSlice({
     next: state => {
       state.count += 1;
     },
+    finish: state => {
+      state.isFinish = true;
+    },
   },
 });
 
-export const { next } = slice.actions;
+export const { next, finish } = slice.actions;
 
 export default slice.reducer;

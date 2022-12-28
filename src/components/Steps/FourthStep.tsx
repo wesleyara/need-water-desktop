@@ -1,11 +1,9 @@
-import { IState } from "@/@types";
 import { finish } from "@/redux/stepSlice";
 import { setTimer } from "@/redux/userSlice";
-import { storageSet } from "@/services/storage";
 import { ToggleOpacity } from "@/utils";
 import { timers } from "@/utils/constants";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { delay } from "utils-react";
 
@@ -13,7 +11,6 @@ export const FourthStep = () => {
   const dispatch = useDispatch();
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(0);
-  const data = useSelector((state: IState) => state.user);
 
   const handleNext = async () => {
     if (start === 0 || end === 0) {
@@ -30,7 +27,6 @@ export const FourthStep = () => {
       autoClose: 2000,
     });
     await delay(2000);
-    storageSet("data", data);
     dispatch(finish());
   };
 

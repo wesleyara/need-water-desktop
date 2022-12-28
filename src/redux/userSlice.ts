@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { IData } from "@/@types";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -40,9 +41,33 @@ export const slice = createSlice({
       state.timestamp = timestamp;
       state.current_day = Date.now();
     },
+    setStorage: (state, action) => {
+      const {
+        amount_per_cup,
+        amount_water,
+        count_times,
+        current_amount,
+        current_day,
+        is_goal,
+        last_drink,
+        timestamp,
+        weight,
+      } = action.payload;
+
+      state.amount_per_cup = amount_per_cup;
+      state.amount_water = amount_water;
+      state.count_times = count_times;
+      state.current_amount = current_amount;
+      state.current_day = current_day;
+      state.is_goal = is_goal;
+      state.last_drink = last_drink;
+      state.timestamp = timestamp;
+      state.weight = weight;
+    },
   },
 });
 
-export const { setInitialStats, setGoals, setTimer } = slice.actions;
+export const { setInitialStats, setGoals, setTimer, setStorage } =
+  slice.actions;
 
 export default slice.reducer;

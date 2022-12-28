@@ -57,6 +57,32 @@ select {
   transition: 0.3s ease-in-out;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-message {
+  visibility: hidden;
+  width: 200px;
+  background-color: var(--blue-2A);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  left: 40px;
+  top: 0px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.tooltip:hover .tooltip-message {
+  visibility: visible;
+  opacity: 1;
+}
+
 .transition-ease {
   transition: 0.3s ease-in-out;
 }

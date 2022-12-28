@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { delay } from "utils-react";
 
 import { Cup } from "../Cup";
+import { Tooltip } from "../Tooltip";
 
 export const Header = () => {
   const handleReset = async () => {
@@ -23,9 +24,14 @@ export const Header = () => {
         <nav>
           <ul className="flex gap-2">
             <li className="cursor-pointer p-3">Editar Dados</li>
-            <li className="cursor-pointer p-3" onClick={handleReset}>
-              Resetar
-            </li>
+            <Tooltip
+              message="Esta ação irá resetar todos os dados da aplicação!"
+              classname="!top-[50px] !-left-[110px]"
+            >
+              <li className="cursor-pointer p-3" onClick={handleReset}>
+                Resetar
+              </li>
+            </Tooltip>
           </ul>
         </nav>
       </header>

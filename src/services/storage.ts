@@ -11,3 +11,7 @@ export const storageRequest = (key: string) => {
 export const storageSet = (key: string, value: any) => {
   localStorage.setItem(key, JSON.stringify(value));
 };
+
+export const storageRemove = (key: string) => {
+  localStorage.removeItem(key);
+};

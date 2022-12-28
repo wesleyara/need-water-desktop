@@ -10,6 +10,7 @@ const initialState: IData = {
   amount_per_cup: 0,
   current_amount: 0,
   is_goal: false,
+  last_drink: 0,
 };
 
 export const slice = createSlice({
@@ -26,17 +27,22 @@ export const slice = createSlice({
     setGoals: (state, action) => {
       const amountPerCup = action.payload;
       const amountWater = state.amount_water;
-      const seconds = 46800 * 1000;
       const countTimes = Math.ceil(amountWater / amountPerCup);
-      const timestamp = seconds / countTimes;
 
       state.amount_per_cup = amountPerCup;
       state.count_times = countTimes;
-      state.timestamp = new Date(timestamp).getMinutes();
+    },
+    setTimer: (state, action) => {
+      const seconds = action.payload;
+      const countTimes = state.count_times;
+      const timestamp = seconds / countTimes;
+
+      state.timestamp = timestamp;
+      state.current_day = Date.now();
     },
   },
 });
 
-export const { setInitialStats, setGoals } = slice.actions;
+export const { setInitialStats, setGoals, setTimer } = slice.actions;
 
 export default slice.reducer;

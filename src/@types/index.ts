@@ -9,6 +9,7 @@ export interface IData {
   amount_per_cup: number;
   current_amount: number;
   is_goal: boolean;
+  last_drink: number;
 }
 
 export interface StepsProps {

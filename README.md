@@ -9,18 +9,34 @@
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
-[![npm version](https://img.shields.io/npm/v/need-water-desktop.svg?style=flat-square)](https://www.npmjs.com/package/need-water-desktop)
-[![npm downloads](https://img.shields.io/npm/dm/need-water-desktop.svg?style=flat-square)](http://npm-stat.com/charts.html?package=cz-conventional-changelog&from=2015-08-01) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-green.svg?style=flat-square)](#contributors-) <!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-green.svg?style=flat-square)](#contributors-) <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 </div>
 
 <h4 align="center">
+ <a href="#-tools">🛠️ Tools</a>
  <a href="#-contributing">:pencil: Contributing</a> •
  <a href="#-thanks">:adult: Thanks</a> •
  <a href="#-license">:page_facing_up: License</a>
 </h4>
 
 <br>
+
+# 🛠️ Tools
+
+For build this project we use:
+
+- [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Electron](https://www.electronjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Redux](https://redux.js.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Countdown](https://www.npmjs.com/package/react-countdown)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [utils-react](https://www.npmjs.com/package/utils-react)
 
 # :pencil: Contributing
 

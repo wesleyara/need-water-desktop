@@ -17,6 +17,7 @@ export const SecondStep = () => {
     const parsedWeight = parseFloat(weight);
 
     dispatch(setInitialStats(parsedWeight));
+    toast.success("Peso cadastrado com sucesso!", { autoClose: 2000 });
     dispatch(next());
   };
 

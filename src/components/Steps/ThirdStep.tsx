@@ -1,49 +1,25 @@
 import { IState } from "@/@types";
+import { next } from "@/redux/stepSlice";
 import { setGoals } from "@/redux/userSlice";
 import { ToggleOpacity } from "@/utils";
+import { cups } from "@/utils/constants";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 import { Cup } from "../Cup";
 
-const cups = [
-  {
-    size: 30,
-    ml: "150ml",
-  },
-  {
-    size: 40,
-    ml: "200ml",
-  },
-  {
-    size: 50,
-    ml: "250ml",
-  },
-  {
-    size: 60,
-    ml: "300ml",
-  },
-  {
-    size: 80,
-    ml: "400ml",
-  },
-  {
-    size: 100,
-    ml: "500ml",
-  },
-];
-
 export const ThirdStep = () => {
   const weight = useSelector((state: IState) => state.user.weight);
   const [selectedCup, setSelectedCup] = useState<any>(undefined);
 
   const dispatch = useDispatch();
+
   const handleSubmit = () => {
     dispatch(setGoals(parseInt(selectedCup.ml)));
+    toast.success("Copo selecionado com sucesso!", { autoClose: 2000 });
+    dispatch(next());
   };
-
-  console.log(selectedCup);
 
   return (
     <div className="overflow-hidden">

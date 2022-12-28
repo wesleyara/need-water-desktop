@@ -3,7 +3,7 @@
  */
 {
   appId: "need-water",
-  productName: "Academia Corpo em Forma",
+  productName: "Need Water",
   copyright: "Copyright © 2022 ${author}",
   asar: true,
   directories: {

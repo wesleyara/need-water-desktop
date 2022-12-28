@@ -1,5 +1,5 @@
 import { IState } from "@/@types";
-import { steps } from "@/components";
+import { Header, steps } from "@/components";
 import { useSelector } from "react-redux/es/exports";
 
 export const Home = () => {
@@ -10,5 +10,9 @@ export const Home = () => {
     return <>{steps.find(item => item.id === count)?.element}</>;
   }
 
-  return <div></div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };

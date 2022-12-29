@@ -16,15 +16,15 @@
 
   /* Primary colors */
   --cerulean-50: #eff9ff;
-    --cerulean-100: #def3ff;
-    --cerulean-200: #b6e8ff;
-    --cerulean-300: #75d9ff;
-    --cerulean-400: #2cc6ff;
-    --cerulean-500: #00b1fa;
-    --cerulean-600: #008cd4;
-    --cerulean-700: #006fab;
-    --cerulean-800: #005e8d;
-    --cerulean-900: #064e74;
+  --cerulean-100: #def3ff;
+  --cerulean-200: #b6e8ff;
+  --cerulean-300: #75d9ff;
+  --cerulean-400: #2cc6ff;
+  --cerulean-500: #00b1fa;
+  --cerulean-600: #008cd4;
+  --cerulean-700: #006fab;
+  --cerulean-800: #005e8d;
+  --cerulean-900: #064e74;
 }
 
 .btn {

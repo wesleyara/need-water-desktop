@@ -19,7 +19,6 @@ export const path = [
 ];
 
 export function Routes() {
-  // const currentRouter = useSelector((state: IState) => state.router.route);
   const dispatch = useDispatch();
   const router = currentRouter();
 

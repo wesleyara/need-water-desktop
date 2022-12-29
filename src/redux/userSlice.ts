@@ -44,6 +44,10 @@ export const slice = createSlice({
     setDrink: state => {
       const amount_per_cup = state.amount_per_cup;
 
+      if (state.current_amount + amount_per_cup >= state.amount_water) {
+        state.is_goal = true;
+      }
+
       state.current_amount += amount_per_cup;
       state.last_drink = Date.now();
     },
@@ -70,10 +74,22 @@ export const slice = createSlice({
       state.timestamp = timestamp;
       state.weight = weight;
     },
+    setDayReset: state => {
+      state.current_amount = 0;
+      state.current_day = Date.now();
+      state.is_goal = false;
+      state.last_drink = 0;
+    },
   },
 });
 
-export const { setInitialStats, setGoals, setTimer, setStorage, setDrink } =
-  slice.actions;
+export const {
+  setInitialStats,
+  setGoals,
+  setTimer,
+  setStorage,
+  setDrink,
+  setDayReset,
+} = slice.actions;
 
 export default slice.reducer;

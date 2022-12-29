@@ -41,6 +41,12 @@ export const slice = createSlice({
       state.timestamp = timestamp;
       state.current_day = Date.now();
     },
+    setDrink: state => {
+      const amount_per_cup = state.amount_per_cup;
+
+      state.current_amount += amount_per_cup;
+      state.last_drink = Date.now();
+    },
     setStorage: (state, action) => {
       const {
         amount_per_cup,
@@ -67,7 +73,7 @@ export const slice = createSlice({
   },
 });
 
-export const { setInitialStats, setGoals, setTimer, setStorage } =
+export const { setInitialStats, setGoals, setTimer, setStorage, setDrink } =
   slice.actions;
 
 export default slice.reducer;

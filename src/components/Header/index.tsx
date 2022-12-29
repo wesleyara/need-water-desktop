@@ -10,6 +10,7 @@ export const Header = () => {
     toast.success("Dados resetados com sucesso!", { autoClose: 2000 });
     await delay(2000);
     storageRemove("data");
+    storageRemove("history");
     location.reload();
   };
 

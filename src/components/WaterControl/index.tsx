@@ -1,6 +1,7 @@
 import { IState } from "@/@types";
 import { setDrink } from "@/redux/userSlice";
 import Countdown from "react-countdown";
+import { MdVerified } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { useNow } from "utils-react";
 
@@ -10,9 +11,8 @@ import { Progressbar } from "../Progressbar";
 import { Tooltip } from "../Tooltip";
 
 export const WaterControl = () => {
-  const { amount_water, current_amount, timestamp, last_drink } = useSelector(
-    (state: IState) => state.user,
-  );
+  const { amount_water, current_amount, timestamp, last_drink, is_goal } =
+    useSelector((state: IState) => state.user);
 
   const dispatch = useDispatch();
 
@@ -21,7 +21,12 @@ export const WaterControl = () => {
   return (
     <div className="full flex flex-col items-center justify-center gap-5">
       <span>
-        {last_drink + timestamp <= now ? (
+        {is_goal ? (
+          <p className="flex items-center justify-center gap-2 font-bold text-black">
+            Meta diária alcançada, continue assim!{" "}
+            <MdVerified className="text-green-400" size={20} />
+          </p>
+        ) : last_drink + timestamp <= now ? (
           <p className="font-bold text-black">Hora de beber água!</p>
         ) : (
           <Countdown

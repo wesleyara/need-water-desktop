@@ -4,7 +4,6 @@ import { setDayReset, setStorage } from "@/redux/userSlice";
 import { storageRequest, storageSet } from "@/services";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { currentRouter } from "utils-react";
 
 import { LayoutProvider } from "../layout/LayoutProvider";
 import { History, Home } from "../pages";
@@ -20,7 +19,6 @@ export const path = [
 
 export function Routes() {
   const dispatch = useDispatch();
-  const router = currentRouter();
 
   useEffect(() => {
     const data = storageRequest("data");
@@ -66,11 +64,13 @@ export function Routes() {
     }
   }, [data]);
 
+  const router = useSelector((state: IState) => state.router);
+
   return (
     <>
       <LayoutProvider>
         {path
-          .filter(item => item.path === router.pathname)
+          .filter(item => item.path === router.path)
           .map(item => item.element)}
       </LayoutProvider>
     </>

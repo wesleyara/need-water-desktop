@@ -22,7 +22,12 @@ interface IStep {
   isFinish: boolean;
 }
 
+interface IRouter {
+  path: string;
+}
+
 export interface IState {
   step: IStep;
   user: IData;
+  router: IRouter;
 }

@@ -1,6 +1,8 @@
+import { push } from "@/redux/routerSlice";
 import { storageRemove } from "@/services";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { currentRouter, delay } from "utils-react";
+import { delay } from "utils-react";
 
 import { Cup } from "../Cup";
 import { Tooltip } from "../Tooltip";
@@ -14,14 +16,10 @@ export const Header = () => {
     location.reload();
   };
 
+  const dispatch = useDispatch();
+
   const handleNavigate = (path: string) => {
-    const current = currentRouter();
-    const protocol = current.protocol;
-    const host = current.host;
-
-    const currentPath = protocol + "//" + host + path;
-
-    location.href = currentPath;
+    dispatch(push(path));
   };
 
   return (

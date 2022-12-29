@@ -8,12 +8,17 @@ module.exports = {
     body: ["Poppins", "system-ui", "sans-serif"],
     extend: {
       colors: {
-        brand: {
-          primary: {
-            blue1F: "var(--blue-1F)",
-            blue1A: "var(--blue-1A)",
-            blue85E: "var(--blue-85E)",
-          },
+        cerulean: {
+          50: "#eff9ff",
+          100: "#def3ff",
+          200: "#b6e8ff",
+          300: "#75d9ff",
+          400: "#2cc6ff",
+          500: "#00b1fa",
+          600: "#008cd4",
+          700: "#006fab",
+          800: "#005e8d",
+          900: "#064e74",
         },
       },
       backgroundColor: {

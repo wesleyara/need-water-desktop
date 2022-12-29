@@ -15,10 +15,16 @@
   --red-violet: #aa18a3;
 
   /* Primary colors */
-  --blue-85E: #2e4e85;
-  --blue-1F: #00b9ff;
-  --blue-2A: #00b1fa;
-  --black-17: #171717;
+  --cerulean-50: #eff9ff;
+    --cerulean-100: #def3ff;
+    --cerulean-200: #b6e8ff;
+    --cerulean-300: #75d9ff;
+    --cerulean-400: #2cc6ff;
+    --cerulean-500: #00b1fa;
+    --cerulean-600: #008cd4;
+    --cerulean-700: #006fab;
+    --cerulean-800: #005e8d;
+    --cerulean-900: #064e74;
 }
 
 .btn {
@@ -26,15 +32,15 @@
   border: 1px solid #ffffff;
   padding: 5px 30px;
   border-radius: 5px;
-  background-color: var(--blue-2A);
+  background-color: var(--cerulean-500);
   color: #ffffff;
   transition: 0.3s ease-in-out;
 }
 
 .btn:hover {
   background-color: #ffffff;
-  color: var(--blue-2A);
-  border: 1px solid var(--blue-2A);
+  color: var(--cerulean-500);
+  border: 1px solid var(--cerulean-500);
 }
 
 input[type="number"] {
@@ -65,7 +71,7 @@ select {
 .tooltip-message {
   visibility: hidden;
   width: 200px;
-  background-color: var(--blue-2A);
+  background-color: var(--cerulean-500);
   color: #ffffff;
   text-align: center;
   border-radius: 6px;
@@ -100,4 +106,8 @@ select {
 
 .fade-up {
   animation: fade-up 1s ease-in-out;
+}
+
+.full {
+  height: calc(100vh - 57px);
 }

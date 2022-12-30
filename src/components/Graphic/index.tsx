@@ -3,7 +3,6 @@ import { storageRequest } from "@/services";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useEffect, useState } from "react";
-import { generateArray } from "utils-react";
 
 import { Cup } from "../Cup";
 
@@ -32,21 +31,12 @@ export const Graphic = ({ period }: GraphicProps) => {
       const tempDays: number[] = [];
       const tempAmount: number[] = [];
 
-      if (days.length < period) {
-        generateArray(period - tempHistory.length).forEach(() => {
-          tempDays.push(0);
-          tempAmount.push(0);
-        });
+      tempDays.push(...historyDays);
+      tempAmount.push(...historyAmount);
 
-        tempDays.push(...historyDays);
-        tempAmount.push(...historyAmount);
-      } else {
-        tempDays.push(...historyDays);
-        tempAmount.push(...historyAmount);
-        // deixar somente os 30 últimos dias
-        tempDays.splice(0, tempDays.length - period);
-        tempAmount.splice(0, tempAmount.length - period);
-      }
+      tempDays.splice(0, tempDays.length - period);
+      tempAmount.splice(0, tempAmount.length - period);
+
       setDays(tempDays);
       setAmount(tempAmount);
     }
@@ -59,7 +49,7 @@ export const Graphic = ({ period }: GraphicProps) => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   const options = {
@@ -71,7 +61,7 @@ export const Graphic = ({ period }: GraphicProps) => {
       },
     },
     title: {
-      text: "Gráfico mensal",
+      text: "Últimos dias",
     },
     xAxis: {
       categories: days,
@@ -106,7 +96,7 @@ export const Graphic = ({ period }: GraphicProps) => {
   }
 
   return (
-    <div>
+    <div className="w-[750px]">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

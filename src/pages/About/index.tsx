@@ -5,7 +5,7 @@ export const About = () => {
   return (
     <>
       <Header />
-      <div className="full mx-auto flex w-[500px] flex-col items-center justify-center">
+      <div className="full mx-auto flex w-[500px] flex-col items-center justify-center text-[16px]">
         <span className="block h-[250px] w-[250px]">
           <img src="https://avatars.githubusercontent.com/u/89321125?v=4" />
         </span>
@@ -15,7 +15,7 @@ export const About = () => {
             href="https://github.com/wesleyara"
             target="_blank"
             rel="noreferrer"
-            className="text-cerulean-500"
+            className="text-[16px] text-cerulean-500"
           >
             Wesley Araújo
           </a>{" "}

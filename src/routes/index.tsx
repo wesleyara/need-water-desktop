@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import { useNow } from "utils-react";
 
 import { LayoutProvider } from "../layout/LayoutProvider";
-import { History, Home } from "../pages";
+import { About, History, Home } from "../pages";
 
 export const path = [
   { name: "Início", path: "/", element: <Home key={"inicio"} /> },
@@ -18,6 +18,11 @@ export const path = [
     name: "Histórico",
     path: "/history",
     element: <History key={"historico"} />,
+  },
+  {
+    name: "Sobre",
+    path: "/about",
+    element: <About key={"sobre"} />,
   },
 ];
 

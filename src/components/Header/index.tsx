@@ -45,6 +45,12 @@ export const Header = () => {
             <li className="cursor-pointer p-3" onClick={() => setIsOpen(true)}>
               Editar Dados
             </li>
+            <li
+              className="cursor-pointer p-3"
+              onClick={() => handleNavigate("/about")}
+            >
+              Sobre
+            </li>
           </ul>
         </nav>
       </header>

@@ -3,11 +3,11 @@
   "productName": "Need Water",
   "private": true,
   "version": "1.0.0",
-  "description": "Need Water app.",
+  "description": "Need Water lembra você de beber água sempre que for necessário.",
   "license": "MIT",
   "homepage": "./",
   "author": {
-    "name": "Wesley",
+    "name": "Wesley Araújo",
     "email": "wesleyara.contato@gmail.com"
   },
   "main": "dist-electron/electron/main/index.js",

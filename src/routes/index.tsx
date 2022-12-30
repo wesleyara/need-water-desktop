@@ -1,4 +1,5 @@
 import { IState } from "@/@types";
+import { Copyright, Schedule } from "@/components";
 import { finish } from "@/redux/stepSlice";
 import { setDayReset, setNotify, setStorage } from "@/redux/userSlice";
 import { storageRequest, storageSet } from "@/services";
@@ -114,6 +115,8 @@ export function Routes() {
         {path
           .filter(item => item.path === router.path)
           .map(item => item.element)}
+        <Schedule />
+        <Copyright />
       </LayoutProvider>
     </>
   );

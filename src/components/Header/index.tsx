@@ -1,26 +1,27 @@
 import { push } from "@/redux/routerSlice";
-import { storageRemove } from "@/services";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
-import { delay } from "utils-react";
 
 import { Cup } from "../Cup";
-import { Tooltip } from "../Tooltip";
+import { Modal } from "../Modal";
+import { EditModal } from "../Modals";
 
 export const Header = () => {
-  const handleReset = async () => {
-    toast.success("Dados resetados com sucesso!", { autoClose: 2000 });
-    await delay(2000);
-    storageRemove("data");
-    storageRemove("history");
-    location.reload();
-  };
+  // const handleReset = async () => {
+  //   toast.success("Dados resetados com sucesso!", { autoClose: 2000 });
+  //   await delay(2000);
+  //   storageRemove("data");
+  //   storageRemove("history");
+  //   location.reload();
+  // };
 
   const dispatch = useDispatch();
 
   const handleNavigate = (path: string) => {
     dispatch(push(path));
   };
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -41,19 +42,16 @@ export const Header = () => {
             >
               Histórico
             </li>
-            <li className="cursor-pointer p-3">Editar Dados</li>
-            <Tooltip
-              message="Esta ação irá resetar todos os dados da aplicação!"
-              classname="!top-[50px] !-left-[110px]"
-            >
-              <li className="cursor-pointer p-3" onClick={handleReset}>
-                Resetar
-              </li>
-            </Tooltip>
+            <li className="cursor-pointer p-3" onClick={() => setIsOpen(true)}>
+              Editar Dados
+            </li>
           </ul>
         </nav>
       </header>
       <hr />
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+        <EditModal setIsOpen={setIsOpen} />
+      </Modal>
     </>
   );
 };

@@ -5,3 +5,7 @@ export * from "./Countdown";
 export * from "./Tooltip";
 export * from "./Progressbar";
 export * from "./WaterControl";
+export * from "./Modal";
+export * from "./Modals";
+export * from "./Schedule";
+export * from "./Copyright";

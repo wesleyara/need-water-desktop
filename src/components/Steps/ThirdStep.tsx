@@ -16,6 +16,10 @@ export const ThirdStep = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
+    if (!selectedCup) {
+      return toast.warn("Selecione um copo!");
+    }
+
     dispatch(setGoals(parseInt(selectedCup.ml)));
     toast.success("Copo selecionado com sucesso!", { autoClose: 2000 });
     dispatch(next());

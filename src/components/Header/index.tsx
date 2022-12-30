@@ -38,6 +38,12 @@ export const Header = () => {
           <ul className="flex gap-2">
             <li
               className="cursor-pointer p-3"
+              onClick={() => handleNavigate("/")}
+            >
+              Início
+            </li>
+            <li
+              className="cursor-pointer p-3"
               onClick={() => handleNavigate("/history")}
             >
               Histórico

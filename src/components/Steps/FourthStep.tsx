@@ -22,7 +22,16 @@ export const FourthStep = () => {
 
     const diffInSecounds = diff * diffValue;
 
-    dispatch(setTimer(diffInSecounds));
+    const hoursStartValue = timers.find(item => item.id === start)?.value;
+    const hoursEndValue = timers.find(item => item.id === end)?.value;
+
+    dispatch(
+      setTimer({
+        milliseconds: diffInSecounds,
+        start_time: hoursStartValue,
+        end_time: hoursEndValue,
+      }),
+    );
     toast.success("Eba! Agora você está pronto para começar!", {
       autoClose: 2000,
     });

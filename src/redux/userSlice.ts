@@ -13,6 +13,8 @@ const initialState: IData = {
   current_amount: 0,
   is_goal: false,
   last_drink: 0,
+  start_time: "",
+  end_time: "",
 };
 
 export const slice = createSlice({
@@ -35,12 +37,16 @@ export const slice = createSlice({
       state.count_times = countTimes;
     },
     setTimer: (state, action) => {
-      const seconds = action.payload;
+      const milliseconds = action.payload.milliseconds;
+      const start_time = action.payload.start_time;
+      const end_time = action.payload.end_time;
       const countTimes = state.count_times;
-      const timestamp = seconds / countTimes;
+      const timestamp = milliseconds / countTimes;
 
       state.timestamp = timestamp;
       state.current_day = Date.now();
+      state.start_time = start_time;
+      state.end_time = end_time;
     },
     setDrink: state => {
       const amount_per_cup = state.amount_per_cup;
@@ -67,7 +73,10 @@ export const slice = createSlice({
         last_drink,
         timestamp,
         weight,
-      } = action.payload;
+        start_time,
+        end_time,
+        notify,
+      } = action.payload as IData;
 
       state.amount_per_cup = amount_per_cup;
       state.amount_water = amount_water;
@@ -78,6 +87,9 @@ export const slice = createSlice({
       state.last_drink = last_drink;
       state.timestamp = timestamp;
       state.weight = weight;
+      state.start_time = start_time;
+      state.end_time = end_time;
+      state.notify = notify;
     },
     setDayReset: state => {
       state.current_amount = 0;

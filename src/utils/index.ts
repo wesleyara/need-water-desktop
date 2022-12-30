@@ -24,3 +24,25 @@ export const audioCall = (path: string) => {
   audio.volume = 1;
   audio.play();
 };
+
+export const useHours = () => {
+  const [date, setDate] = useState(new Date());
+  const [hours, setHours] = useState(date.getHours());
+  const [minutes, setMinutes] = useState(date.getMinutes());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  });
+
+  useEffect(() => {
+    setHours(date.getHours());
+    setMinutes(date.getMinutes());
+  }, [date]);
+
+  return `${hours < 10 ? `0${hours}` : hours}:${
+    minutes < 10 ? `0${minutes}` : minutes
+  }`;
+};

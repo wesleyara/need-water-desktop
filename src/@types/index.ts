@@ -11,6 +11,8 @@ export interface IData {
   current_amount: number;
   is_goal: boolean;
   last_drink: number;
+  start_time: string;
+  end_time: string;
 }
 
 export interface StepsProps {

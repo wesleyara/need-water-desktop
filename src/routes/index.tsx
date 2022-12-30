@@ -1,9 +1,14 @@
 import { IState } from "@/@types";
+import { push } from "@/redux/routerSlice";
 import { finish } from "@/redux/stepSlice";
-import { setDayReset, setStorage } from "@/redux/userSlice";
+import { setDayReset, setNotify, setStorage } from "@/redux/userSlice";
 import { storageRequest, storageSet } from "@/services";
+import { audioCall } from "@/utils";
+import { pushNotifications } from "electron";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { useNow } from "utils-react";
 
 import { LayoutProvider } from "../layout/LayoutProvider";
 import { History, Home } from "../pages";
@@ -19,6 +24,8 @@ export const path = [
 
 export function Routes() {
   const dispatch = useDispatch();
+  const router = useSelector((state: IState) => state.router);
+  const now = useNow();
 
   useEffect(() => {
     const data = storageRequest("data");
@@ -64,7 +71,24 @@ export function Routes() {
     }
   }, [data]);
 
-  const router = useSelector((state: IState) => state.router);
+  const notification = () => {
+    audioCall("./sounds/notification.wav");
+    toast.success("Hora de beber água!", { autoClose: 5000 });
+  };
+
+  useEffect(() => {
+    if (data.notify) {
+      notification();
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (!data.notify && data.timestamp !== 0) {
+      if (data.last_drink + data.timestamp < now) {
+        dispatch(setNotify());
+      }
+    }
+  }, [data, now]);
 
   return (
     <>

@@ -5,6 +5,7 @@ export interface IData {
   amount_water: number;
   count_times: number;
   timestamp: number;
+  notify: boolean;
   current_day: number;
   amount_per_cup: number;
   current_amount: number;

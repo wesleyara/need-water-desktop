@@ -6,6 +6,7 @@ const initialState: IData = {
   weight: 0,
   amount_water: 0,
   count_times: 0,
+  notify: false,
   timestamp: 0,
   current_day: 0,
   amount_per_cup: 0,
@@ -50,6 +51,10 @@ export const slice = createSlice({
 
       state.current_amount += amount_per_cup;
       state.last_drink = Date.now();
+      state.notify = false;
+    },
+    setNotify: state => {
+      state.notify = true;
     },
     setStorage: (state, action) => {
       const {
@@ -90,6 +95,7 @@ export const {
   setStorage,
   setDrink,
   setDayReset,
+  setNotify,
 } = slice.actions;
 
 export default slice.reducer;

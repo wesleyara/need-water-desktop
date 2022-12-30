@@ -18,3 +18,9 @@ export const ToggleOpacity = (value: number) => {
 
   return className;
 };
+
+export const audioCall = (path: string) => {
+  const audio = new Audio(path);
+  audio.volume = 0.3;
+  audio.play();
+};

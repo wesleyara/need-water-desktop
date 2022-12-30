@@ -4,8 +4,6 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useEffect, useState } from "react";
 
-import { Cup } from "../Cup";
-
 interface GraphicProps {
   period: number;
 }
@@ -42,16 +40,6 @@ export const Graphic = ({ period }: GraphicProps) => {
     }
   }, [period]);
 
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
-
   const options = {
     chart: {
       type: "line",
@@ -61,7 +49,7 @@ export const Graphic = ({ period }: GraphicProps) => {
       },
     },
     title: {
-      text: "Últimos dias",
+      text: "Gráfico dos últimos dias",
     },
     xAxis: {
       categories: days,
@@ -86,14 +74,6 @@ export const Graphic = ({ period }: GraphicProps) => {
       },
     ],
   };
-
-  if (loading) {
-    return (
-      <div className="rotate mt-20">
-        <Cup size={100} />
-      </div>
-    );
-  }
 
   return (
     <div className="w-[750px]">

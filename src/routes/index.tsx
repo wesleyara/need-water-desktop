@@ -81,7 +81,14 @@ export function Routes() {
 
   const notification = () => {
     audioCall("./sounds/notification.wav");
-    toast.success("Hora de beber água!", { autoClose: 5000 });
+    const notification = new Notification("Need Water", {
+      body: "Hora de beber água!",
+      icon: "./images/icon.png",
+    });
+
+    notification.onclick = () => {
+      window.focus();
+    };
   };
 
   useEffect(() => {
